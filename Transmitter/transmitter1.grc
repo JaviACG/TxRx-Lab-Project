@@ -32,11 +32,64 @@ options:
     state: enabled
 
 blocks:
+- name: LimeRate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [183, 76]
+    rotation: 0
+    state: enabled
+- name: excess_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.350'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [350, 12]
+    rotation: 0
+    state: enabled
+- name: low_pass_filter_taps
+  id: variable_low_pass_filter_taps
+  parameters:
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: '20000'
+    gain: '1.0'
+    samp_rate: samp_rate
+    width: '2000'
+    win: firdes.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 12]
+    rotation: 0
+    state: true
+- name: rs_ratio
+  id: variable
+  parameters:
+    comment: ''
+    value: '1.04'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [275, 76]
+    rotation: 0
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: '48000'
   states:
     bus_sink: false
     bus_source: false
@@ -44,6 +97,35 @@ blocks:
     coordinate: [184, 12]
     rotation: 0
     state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [276, 13]
+    rotation: 0
+    state: enabled
+- name: InFile
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: 'File Name '
+    short_id: ''
+    type: str
+    value: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [446, 12]
+    rotation: 0
+    state: true
 - name: blocks_file_source_0
   id: blocks_file_source
   parameters:
@@ -63,7 +145,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [45, 142]
+    coordinate: [46, 215]
     rotation: 0
     state: true
 - name: blocks_repack_bits_bb_0
@@ -83,7 +165,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [266, 463]
+    coordinate: [267, 536]
     rotation: 0
     state: true
 - name: blocks_stream_to_tagged_stream_0
@@ -102,7 +184,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [308, 166]
+    coordinate: [309, 239]
     rotation: 0
     state: true
 - name: blocks_tagged_stream_mux_0
@@ -122,7 +204,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1128, 144]
+    coordinate: [1129, 217]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -141,7 +223,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1071, 336]
+    coordinate: [1072, 409]
     rotation: 0
     state: true
 - name: blocks_uchar_to_float_0
@@ -156,7 +238,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [523, 475]
+    coordinate: [524, 548]
     rotation: 0
     state: true
 - name: digital_constellation_modulator_0
@@ -177,7 +259,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [252, 280]
+    coordinate: [253, 353]
     rotation: 0
     state: true
 - name: digital_crc32_bb_0
@@ -195,7 +277,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [598, 158]
+    coordinate: [599, 231]
     rotation: 0
     state: true
 - name: digital_protocol_formatter_bb_0
@@ -212,7 +294,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [849, 88]
+    coordinate: [850, 161]
     rotation: 0
     state: true
 - name: fft_filter_xxx_0
@@ -226,13 +308,13 @@ blocks:
     minoutbuf: '0'
     nthreads: '1'
     samp_delay: '0'
-    taps: ''
+    taps: low_pass_filter_taps
     type: ccc
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [523, 288]
+    coordinate: [524, 361]
     rotation: 0
     state: true
 - name: limesdr_sink_0
@@ -266,7 +348,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1320, 320]
+    coordinate: [1321, 393]
     rotation: 0
     state: true
 - name: mmse_resampler_xx_0
@@ -278,13 +360,13 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     phase_shift: ''
-    resamp_ratio: ''
+    resamp_ratio: '0.0600962'
     type: complex
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [813, 307]
+    coordinate: [814, 380]
     rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
@@ -381,7 +463,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [752, 453]
+    coordinate: [753, 526]
     rotation: 0
     state: true
 - name: virtual_sink_0
@@ -394,7 +476,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1384, 156]
+    coordinate: [1385, 229]
     rotation: 0
     state: true
 - name: virtual_source_0
@@ -407,7 +489,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [60, 303]
+    coordinate: [61, 376]
     rotation: 0
     state: true
 
