@@ -265,9 +265,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1068, 486]
+    coordinate: [1083, 408]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_uchar_to_float_0
   id: blocks_uchar_to_float
   parameters:
@@ -383,7 +383,7 @@ blocks:
     oversample: '0'
     pa_path_ch0: '255'
     pa_path_ch1: '255'
-    rf_freq: 100e6
+    rf_freq: 433e6
     samp_rate: samp_rate
     serial: ''
   states:
@@ -548,7 +548,6 @@ connections:
 - [digital_protocol_formatter_bb_0, '0', blocks_tagged_stream_mux_0, '0']
 - [fft_filter_xxx_0, '0', mmse_resampler_xx_0, '0']
 - [mmse_resampler_xx_0, '0', blocks_throttle_0, '0']
-- [mmse_resampler_xx_0, '0', limesdr_sink_0, '0']
 - [virtual_source_0, '0', blocks_repack_bits_bb_0, '0']
 - [virtual_source_0, '0', digital_constellation_modulator_0, '0']
 
