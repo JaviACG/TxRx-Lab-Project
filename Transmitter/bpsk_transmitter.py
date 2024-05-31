@@ -147,7 +147,7 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
         self.limesdr_sink_0.set_sample_rate(samp_rate)
 
 
-        self.limesdr_sink_0.set_center_freq(100e6, 0)
+        self.limesdr_sink_0.set_center_freq(433e6, 0)
 
         self.limesdr_sink_0.set_bandwidth(5e6, 0)
 
@@ -175,6 +175,7 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
             verbose=False,
             log=False)
         self.blocks_uchar_to_float_0 = blocks.uchar_to_float()
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_char*1, 'packet_len', 0)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 64, "packet_len")
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(8, 1, "", False, gr.GR_LSB_FIRST)
@@ -191,13 +192,14 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.digital_crc32_bb_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.blocks_repack_bits_bb_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.digital_constellation_modulator_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.limesdr_sink_0, 0))
         self.connect((self.blocks_uchar_to_float_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.digital_constellation_modulator_0, 0), (self.fft_filter_xxx_0, 0))
         self.connect((self.digital_crc32_bb_0, 0), (self.blocks_tagged_stream_mux_0, 1))
         self.connect((self.digital_crc32_bb_0, 0), (self.digital_protocol_formatter_bb_0, 0))
         self.connect((self.digital_protocol_formatter_bb_0, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.fft_filter_xxx_0, 0), (self.mmse_resampler_xx_0, 0))
-        self.connect((self.mmse_resampler_xx_0, 0), (self.limesdr_sink_0, 0))
+        self.connect((self.mmse_resampler_xx_0, 0), (self.blocks_throttle_0, 0))
 
 
     def closeEvent(self, event):
@@ -216,6 +218,7 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
+        self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.limesdr_sink_0.set_digital_filter(self.samp_rate, 0)
         self.limesdr_sink_0.set_digital_filter(self.samp_rate, 1)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
