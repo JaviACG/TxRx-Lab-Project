@@ -12,3 +12,9 @@ This project involves implementing a digital communication system for transmitti
 6. [References](#references)
 7. [Credits](#credits)
 
+# Definitions(#definitions)
+- BPSK Modulation
+- GNU Radio
+- LimeSDR
+- Interpolation
+- Decimation
