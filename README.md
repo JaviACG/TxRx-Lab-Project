@@ -21,7 +21,7 @@ This project involves implementing a digital communication system for transmitti
 # Definitions
 - BPSK Modulation
   ![BPSK Transmitter](images/BPSK Transmitter.htm)
-  *italicized text*<center>[Figura 1](Mathuranathan, 2020)</center>*italicized text*
+  *<center>[Figura 1](Mathuranathan, 2020)</center>*
 
 - GNU Radio
 - LimeSDR
