@@ -20,7 +20,7 @@ This project involves implementing a digital communication system for transmitti
 
 # Definitions
 - BPSK Modulation
-  <center>![BPSK Transmitter](https://www.gaussianwaves.com/buy-books/)<center>
+  ![BPSK Transmitter](Images/BPSK Transmitter.htm)
   <center>[Figura 1](Mathuranathan, 2020)</center>
 
 - GNU Radio
