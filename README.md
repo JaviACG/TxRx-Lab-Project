@@ -23,7 +23,7 @@ This project involves implementing a digital communication system for transmitti
 
   ![BPSK Transmitter](Images/TxBPSK.png)
 
-  *[Figura 1](Mathuranathan, 2020)*
+  *[Figura 1.](https://www.gaussianwaves.com/2010/04/bpsk-modulation-and-demodulation-2/)*
 
 - GNU Radio
 - LimeSDR
