@@ -25,6 +25,10 @@ This project involves implementing a digital communication system for transmitti
 
   *[BPSK transmitter](https://www.gaussianwaves.com/2010/04/bpsk-modulation-and-demodulation-2/)*
 
+  ![BPSK Receiver](Images/RxBPSK.png)
+
+  *[BPSK Receiver](https://www.gaussianwaves.com/2010/04/bpsk-modulation-and-demodulation-2/)*
+
 - GNU Radio
 - LimeSDR
 - Interpolation
