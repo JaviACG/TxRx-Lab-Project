@@ -32,6 +32,18 @@ options:
     state: enabled
 
 blocks:
+- name: MTU
+  id: variable
+  parameters:
+    comment: ''
+    value: '1500'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [989, 17]
+    rotation: 0
+    state: true
 - name: bpsk
   id: variable_constellation
   parameters:
@@ -47,7 +59,31 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [317, 13]
+    coordinate: [472, 23]
+    rotation: 0
+    state: true
+- name: excess_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.35'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [357, 21]
+    rotation: 0
+    state: true
+- name: phase_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.0628'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [870, 18]
     rotation: 0
     state: true
 - name: samp_rate
@@ -62,6 +98,42 @@ blocks:
     coordinate: [184, 12]
     rotation: 0
     state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [769, 21]
+    rotation: 0
+    state: true
+- name: thresh
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [277, 15]
+    rotation: 0
+    state: true
+- name: usrp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '768000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 21]
+    rotation: 0
+    state: true
 - name: analog_agc_xx_0
   id: analog_agc_xx
   parameters:
@@ -89,7 +161,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: resultando.txt
     type: byte
     unbuffered: 'True'
     vlen: '1'
@@ -351,7 +423,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [90, 166]
+    coordinate: [81, 159]
     rotation: 0
     state: true
 - name: qtgui_const_sink_x_0
@@ -579,9 +651,9 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: '""'
+    name: correlate input
     nconnections: '1'
-    size: '1024'
+    size: '256'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -750,7 +822,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1088, 73]
+    coordinate: [1154, 93]
     rotation: 0
     state: true
 - name: virtual_sink_1
