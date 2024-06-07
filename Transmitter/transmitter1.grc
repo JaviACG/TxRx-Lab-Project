@@ -175,7 +175,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /home/popuser/Desktop/TxRx-Lab-Project/Transmitter/Description
+    file: /home/popuser/Desktop/TxRx-Lab-Project/Transmitter/Pruebacsv.csv
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -375,7 +375,7 @@ blocks:
     digital_bandw_ch0: samp_rate
     digital_bandw_ch1: samp_rate
     filename: ''
-    gain_dB_ch0: '1'
+    gain_dB_ch0: '40'
     gain_dB_ch1: '1'
     length_tag_name: ''
     nco_freq_ch0: '0'
