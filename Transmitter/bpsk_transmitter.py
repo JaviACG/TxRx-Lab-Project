@@ -155,7 +155,7 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
         self.limesdr_sink_0.set_digital_filter(samp_rate, 0)
 
 
-        self.limesdr_sink_0.set_gain(1, 0)
+        self.limesdr_sink_0.set_gain(40, 0)
 
 
         self.limesdr_sink_0.set_antenna(255, 0)
@@ -179,7 +179,7 @@ class bpsk_transmitter(gr.top_block, Qt.QWidget):
         self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_char*1, 'packet_len', 0)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 64, "packet_len")
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(8, 1, "", False, gr.GR_LSB_FIRST)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, '/home/popuser/Desktop/TxRx-Lab-Project/Transmitter/Description', False, 0, 0)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, '/home/popuser/Desktop/TxRx-Lab-Project/Transmitter/Pruebacsv.csv', False, 0, 0)
         self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
 
 
