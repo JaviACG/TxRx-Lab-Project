@@ -6,8 +6,8 @@ This project involves implementing a digital communication system for transmitti
 2. [Objectives](#objectives)
 3. [Definitions](#definitions)
 4. [Procedure](#procedure)
-	- [Transmissor](#transmissor)
-	- [Receptor](#receptor)
+	- [Transmitter](#transmitter)
+	- [Receiver](#receiver)
 5. [Results](#results)
 6. [Findings](#findings)
 7. [Conclusions](#conclusions)
@@ -51,8 +51,10 @@ https://nuclearrambo.com/wordpress/transferring-a-text-file-over-the-air-with-li
 https://wiki.gnuradio.org/index.php?title=File_transfer_using_Packet_and_BPSK
 https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
+# Transmitter 
 Having said that, the Tx diagram
 
+# Receiver
 On the other hand, the Rx diagram represents a receiver for BPSK modulation implemented in GNU Radio. The components are as follow:
 1. **ZMQ SUB Source**:
    - This block receives data from a ZeroMQ socket.
