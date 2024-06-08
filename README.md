@@ -2,16 +2,20 @@
 This project involves implementing a digital communication system for transmitting a text file using BPSK/QPSK modulation. Two LimeSDR boards will be used: one for transmission and the other one for reception.
 
 # Content
-1. [Objectives](#objectives)
-2. [Definitions](#definitions)
-3. [Procedure](#procedure)
+1. [Keywords](#keywords)
+2. [Objectives](#objectives)
+3. [Definitions](#definitions)
+4. [Procedure](#procedure)
 	- [Transmissor](#transmissor)
 	- [Receptor](#receptor)
-4. [Results](#results)
-5. [Findings](#findings)
-6. [Conclusions](#conclusions)
-7. [References](#references)
-8. [Credits](#credits)
+5. [Results](#results)
+6. [Findings](#findings)
+7. [Conclusions](#conclusions)
+8. [References](#references)
+9. [Credits](#credits)
+
+# Keywords
+BPSK modulation, transmitter, receiver, LimeSDR, GNU Radio, Interpolation, Decimation, Software Defined Radio
 
 # Objectives
 1. Uploading of different types of files for subsequent processing.
