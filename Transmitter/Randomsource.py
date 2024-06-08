@@ -295,8 +295,8 @@ class Randomsource(gr.top_block, Qt.QWidget):
         self.limesdr_sink_0.set_digital_filter(self.samp_rate, 0)
         self.limesdr_sink_0.set_digital_filter(self.samp_rate, 1)
         self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
-        self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.qtgui_freq_sink_x_1.set_frequency_range(0, self.samp_rate)
+        self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
 
     def get_access_key(self):
         return self.access_key
