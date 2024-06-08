@@ -63,7 +63,7 @@ Tx diagram
 
 
 Rx diagram
-![Receiver diagram](Images/Rx4.png)
+![Receiver diagram](Images/Rx4.jpg)
 
 # Results
 
