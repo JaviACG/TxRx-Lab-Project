@@ -2,16 +2,20 @@
 This project involves implementing a digital communication system for transmitting a text file using BPSK/QPSK modulation. Two LimeSDR boards will be used: one for transmission and the other one for reception.
 
 # Content
-1. Objectives
-2. [Definitions](#definitions)
-3. [Procedure](#procedure)
-	- [Transmissor](#transmissor)
-	- [Receptor](#receptor)
-4. [Results](#results)
-5. [Findings](#findings)
-6. [Conclusions](#conclusions)
-7. [References](#references)
-8. [Credits](#credits)
+1. [Keywords](#keywords)
+2. [Objectives](#objectives)
+3. [Definitions](#definitions)
+4. [Procedure](#procedure)
+	- [Transmitter](#transmitter)
+	- [Receiver](#receiver)
+5. [Results](#results)
+6. [Findings](#findings)
+7. [Conclusions](#conclusions)
+8. [References](#references)
+9. [Credits](#credits)
+
+# Keywords
+BPSK modulation, transmitter, receiver, LimeSDR, GNU Radio, Interpolation, Decimation, Software Defined Radio
 
 # Objectives
 1. Uploading of different types of files for subsequent processing.
@@ -47,8 +51,84 @@ https://nuclearrambo.com/wordpress/transferring-a-text-file-over-the-air-with-li
 https://wiki.gnuradio.org/index.php?title=File_transfer_using_Packet_and_BPSK
 https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
+# Transmitter 
 Having said that, the Tx diagram
-On the other hand, the Rx diagram
+
+# Receiver
+On the other hand, the Rx diagram represents a receiver for BPSK modulation implemented in GNU Radio. The components are as follow:
+1. **ZMQ SUB Source**:
+   - This block receives data from a ZeroMQ socket.
+   - Parameters such as the address, timeout, pass tags, and filter key are configured here.
+   - The source rate is set to 768 kHz.
+
+2. **Rational Resampler**:
+   - This block resamples the input signal.
+   - Interpolation is set to 1, and decimation is set to 16, effectively reducing the sample rate by a factor of 16.
+   - Fractional BW is set to 0.
+
+3. **Throttle**:
+   - Controls the flow of samples through the system by limiting the sample rate to 48 kHz.
+
+4. **AGC (Automatic Gain Control)**:
+   - Adjusts the gain of the incoming signal to a desired level.
+   - Gain is set to 1 with a maximum gain of 1.
+
+5. **FLL Band-Edge**:
+   - Frequency-locked loop (FLL) for coarse frequency correction.
+   - Samples per symbol is set to 4, with a filter rolloff factor of 350m, and prototype filter size of 44.
+   - Loop bandwidth is set to 62.8m.
+
+6. **Constellation Decoder**:
+   - Decodes the incoming BPSK signal using the specified constellation object (BPSK).
+   - The constellation is a BPSK object with one point.
+
+7. **Differential Decoder**:
+   - Differentiates the phase of the received signal to recover the original data.
+   - Modulus is set to 2.
+
+8. **Virtual Sink**:
+   - A placeholder block to monitor the output stream at this stage.
+   - Stream ID is set to r1.
+     
+9. **Virtual Source**:
+   - Takes the output from the previous Virtual Sink as input.
+   - Stream ID is r1.
+
+10. **Map**:
+   - Maps input values to output values according to a defined mapping.
+   - Map.0 is used here.
+
+11. **Correlate Access Code - Tag Stream**:
+   - Detects the presence of a specific access code in the incoming bitstream and tags it.
+   - Access code is set to 111000100011.
+   - Threshold is set to 1, and the tag name is packet_len.
+
+12. **Repack Bits**:
+   - Packs bits into bytes.
+   - Bits per input byte is 1, and bits per output byte is 8.
+
+13. **UChar to Float**:
+   - Converts unsigned char data to floating-point format.
+
+14. **QT GUI Time Sink**:
+   - Visualizes the time domain signal.
+   - The number of points is set to 256, with a sample rate of 48 kHz.
+
+15. **Stream CRC32**:
+   - Checks and verifies the CRC32 of the received packet.
+   - Mode is set to Check CRC, with the length tag name as packet_len and packed set to Yes.
+
+16. **File Sink**:
+   - Writes the output data to a file.
+   - File path is /output.tmp, unbuffered mode is on, and append file is set to Overwrite.
+
+The way this block diagram works, as a general overview, is the following:
+1. The **ZMQ SUB Source** receives the incoming data, which is then resampled and its rate controlled.
+2. The signal goes through an **AGC** to normalize its amplitude.
+3. **Frequency correction** is performed using the FLL Band-Edge block.
+4. The **Constellation Decoder** and **Differential Decoder** work together to recover the original BPSK signal.
+5. The signal is further processed by correlating access codes and repacking bits.
+6. Finally, the processed signal is verified with CRC32 and saved to a file.
 
 # Results
 
