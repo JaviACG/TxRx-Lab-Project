@@ -52,7 +52,16 @@ https://wiki.gnuradio.org/index.php?title=File_transfer_using_Packet_and_BPSK
 https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
 # Transmitter 
-Having said that, the Tx diagram
+1. **EPB: File Source to Tagged Stream**
+   - It is a Embedded Python Block that takes the place of a File_Source block, a Stream_to_Tagged_Stream block and parts of a Burst_Shaper block.
+
+It performs the following functions:
+   - Send a preamble to allow the receiver to synchronize.
+   - Read the file in "Pkt_Len" chunks.
+   - Convert the data to Base64, which produces 4 bytes of output for every 3 bytes of input.
+   - Send each Base64 chunk with revised "packet_len" tags.
+   - Send a post-file filler to assure that any buffers have been flushed.
+
 
 # Receiver
 On the other hand, the Rx diagram represents a receiver for BPSK modulation implemented in GNU Radio. The components are as follow:
@@ -144,7 +153,9 @@ The second part is where it is modulated and transmitted.
 Based on the first part, to solve the problem, a random source block is generated and so it modulates it and receives the information correctly.
 
 
+
 **Receiver**
+
 
 
 
