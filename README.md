@@ -136,11 +136,11 @@ The way this block diagram works, as a general overview, is the following:
 
 *First part*
 
-- As a final result, the code was separated into two parts: from when the text file is loaded, until it is converted into characters. From the previous statement, unforeseen events occurred. Therefore, the first part was replaced by a random source, given the inconvenience.
+As a final result, the code was separated into two parts: from when the text file is loaded, until it is converted into characters. From the previous statement, unforeseen events occurred. Therefore, the first part was replaced by a random source, given the inconvenience.
 
 *Second part*
 
-- The second part is where it is modulated and transmitted.
+The second part is where it is modulated and transmitted.
 Based on the first part, to solve the problem, a random source block is generated and so it modulates it and receives the information correctly.
 
 
