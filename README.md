@@ -5,7 +5,7 @@ This project involves implementing a digital communication system for transmitti
 1. Objectives
 2. [Definitions](#definitions)
 3. [Procedure](#procedure)
-	- [Transmissor](#transmissor)
+	- [Transmitter](#transmissor)
 	- [Receptor](#receptor)
 4. [Results](#results)
 5. [Findings](#findings)
