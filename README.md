@@ -156,7 +156,7 @@ https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
   ![Transmitter diagram](Images/Txdiag.png)
 
-  [Transmitter diagram]
+  [Transmitter diagram](Tx file on GNU: Randomsource.py)
 
 
   ![Previous transmitter diagram](Images/PrevTxdiag.png)
@@ -167,7 +167,7 @@ https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
   ![Receiver diagram](Images/Rx4.jpg)
 
-  [Receiver diagram]
+  [Receiver diagram](Rx file on GNU: pkt_rcv.py)
 
 
 # Results
