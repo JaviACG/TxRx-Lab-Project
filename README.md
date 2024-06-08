@@ -65,14 +65,28 @@ Tx diagram
 Rx diagram
 ![Receiver diagram](Images/Rx4.jpg)
 
+
 # Results
+
 
 
 # Findings
 - It was incurred in a gain problem. The error statement referred to low gain usage, where "device_handler::set_gain()" was 6dB. However, the Tx needed 40 dB.
 
+- The transmission cam be checked via BPSK modulation with a LimeSDR card by opening the LimeGUI software with a receiving card and positioning yourself at the transmission frequency.
+
+- When defining numbers with prefixes, for example MHz or KHz, it is necessary to enter the corresponding number of "0s" and not the prefix as this could incur a syntax error.
+
+- La llave de acceso tiene que ser la misma tanto para el transmisor como el receptor, pues utilizan esto para codificar y decodificar el mensaje.
+
+
 # Conclusions
-1. 
+1. The integration of LimeSDR hardware with GNU Radio software demonstrates effective modulation and demodulation processes, highlighting the project's technical proficiency.
+
+2. The project faced issues with transmission gain, initially set to 6dB but required an adjustment to 40dB, showing the need for precise calibration in signal processing.
+
+3. Uploading different types of files ensures flexibility in handling various data forms. With this you'll have efficient data manipulation and analysis. You can also use different programming blocks as a source for the subsequent processing.
+
 
 # References
 - NUCLEARRAMBO. (2019). *Transferring a text file over the air with LimeSDR mini*. https://nuclearrambo.com/wordpress/transferring-a-text-file-over-the-air-with-limesdr-mini/
