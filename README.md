@@ -277,12 +277,12 @@ https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
 *Tx diagram*
 
-  ![Transmitter diagram](Images/Txdiag.png)
+  ![Transmitter diagram](Images/Txdiag.grc)
 
   [Transmitter diagram]
 
 
-  ![Previous transmitter diagram](Images/PrevTxdiag.png)
+  ![Previous transmitter diagram](Images/PrevTxdiag.grc)
 
   [Previous transmitter diagram]
 
