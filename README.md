@@ -36,9 +36,16 @@ Having said the previous statement, a BPSK transmitter is implemented by coding 
   *[BPSK Receiver](https://www.gaussianwaves.com/2010/04/bpsk-modulation-and-demodulation-2/)*
 
 - GNU Radio
-  
+
+GNU Radio is a free and open-source software development toolkit that provides signal processing blocks to implement software radios. It can be used with readily available, low-cost external RF hardware to create software-defined radios (SDRs), or without hardware in a simulation-like environment. GNU Radio is widely used in research, education, and hobbyist applications, providing a flexible platform for working with radio frequency (RF) signals and developing various communication systems.
+LimeSDR is a software-defined radio (SDR) platform that is versatile, low-cost, and open-source, designed for a broad range of wireless communication applications. It is based on field-programmable gate array (FPGA) technology and features a highly flexible, full-duplex transceiver capable of supporting frequencies from 100 kHz to 3.8 GHz. This wide frequency range allows LimeSDR to handle a variety of communication standards, including LTE, GSM, UMTS, Wi-Fi, Bluetooth, and more.
+
 
 - LimeSDR
+
+LimeSDR is a series of open-source hardware platform designed for radio communication.  These software-defined radios (SDRs) are essentially programmable radios that can be configured to receive and transmit a wide range of signals, offering greater flexibility than traditional radios. LimeSDR is compatible with various software applications, enabling tasks like signal analysis, spectrum monitoring, and even prototyping wireless communication systems.
+
+
 - Interpolation
 
 Interpolation refers to the manipulation of the signal's sampling rate. The SDR receives a signal at a specific rate and it increases the sampling rate. It essentially creates new samples between the existing ones to achieve a smoother, higher-resolution signal. This is important for tasks like upconverting the signal to a higher frequency for transmission or accurately representing higher bandwidth signals. 
@@ -57,22 +64,37 @@ https://nuclearrambo.com/wordpress/transferring-a-text-file-over-the-air-with-li
 https://wiki.gnuradio.org/index.php?title=File_transfer_using_Packet_and_BPSK
 https://www.youtube.com/watch?v=UpiaL1Hr6-s
 
-Tx diagram
+*Tx diagram*
+
   ![Transmitter diagram](Images/Txdiag.png)
+
+  [Transmitter diagram]
+
+
   ![Previous transmitter diagram](Images/PrevTxdiag.png)
 
+  [Previous transmitter diagram]
 
-Rx diagram
-![Receiver diagram](Images/Rx4.jpg)
+*Rx diagram*
+
+  ![Receiver diagram](Images/Rx4.jpg)
+
+  [Receiver diagram]
 
 
 # Results
 
 ![Transmitter](Images/Tx1.jpg)
 
+[BPSK transmitter]
+
 ![Receiver](Images/Rx1.jpg)
 
+[BPSK receiver]
+
 ![Receiver](Images/Rx3.jpg)
+
+[BPSK receiver]
 
 
 # Findings
@@ -82,7 +104,7 @@ Rx diagram
 
 - When defining numbers with prefixes, for example MHz or KHz, it is necessary to enter the corresponding number of "0s" and not the prefix as this could incur a syntax error.
 
-- La llave de acceso tiene que ser la misma tanto para el transmisor como el receptor, pues utilizan esto para codificar y decodificar el mensaje.
+- The access key must be the same for both the transmitter and the receiver, as they use this to encode and decode the message.
 
 
 # Conclusions
